@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}Transformer report generator!{% endblock %}
+{% block body %}
+    {{ super() }}
+    <h2>Report generator</h2>
+
+    {% for message in get_flashed_messages() %}
+        <div style="color: red">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <form action="{{ url_for('main') }}" method="post" enctype="multipart/form-data">
+        <label>
+            {{ form.transformer_id.label }}
+            {{ form.transformer_id }}
+        </label>
+        <br>
+        <label>
+            {{ form.database_file.label }}
+            {{ form.database_file }}
+        </label>
+        <br>
+        <input type="submit"/>
+        {{ form.csrf_token }}
+    </form>
+{% endblock %}
+
