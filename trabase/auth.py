@@ -90,8 +90,7 @@ def login():
         if user:
             if user.check_password(password=password):
                 login_user(user)
-                next = request.args.get('next')
-                return redirect(next or url_for('main'))
+                return redirect(url_for('main'))
         flash('Invalid username/password combination')
     return redirect(url_for('login'))
 
