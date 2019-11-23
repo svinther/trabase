@@ -1,4 +1,17 @@
 
+# Run locally
+
+Create a .env file with content like, e.g:
+
+```
+SQLALCHEMY_TRACK_MODIFICATIONS=True
+DATABASE_URL=postgresql://postgres@localhost:5432/oiltest
+
+SECRET_KEY=phussRjaoALhkJhL13Q7wXYdJOK4puma
+
+FLASK_ENV=development
+```
+
 
 # Heroku
 
